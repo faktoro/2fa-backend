@@ -1,0 +1,8 @@
+## Service account key
+config/serviceAccountKey.json
+
+## Output folders
+node_modules/
+dist/
+
+*.log
