@@ -1,5 +1,6 @@
 import Web3 from 'web3'
 import { PRIVATE_KEY } from './consts'
+import ethers from 'ethers'
 
 const RPC_URL = 'https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
 
@@ -19,6 +20,6 @@ function createWeb3() {
 
 export function hashAndSignWithPrivateKey(message: string) {
     const web3 = getWeb3()
-    const hashedMessage = web3.eth.accounts.hashMessage(message);
-    return getWeb3().eth.accounts.sign(hashedMessage, PRIVATE_KEY)
+    const hashedMessage = ethers.utils.keccak256(message);
+    return web3.eth.accounts.sign(hashedMessage, PRIVATE_KEY)
 }
