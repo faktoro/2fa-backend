@@ -1,6 +1,6 @@
 import Web3 from 'web3'
 import { PRIVATE_KEY } from './consts'
-import ethers from 'ethers'
+import { ethers } from 'ethers'
 
 const RPC_URL = 'https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
 
