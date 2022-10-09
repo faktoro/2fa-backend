@@ -31,7 +31,7 @@ export function postRequest(
       await functionRunner(req, res);
     } catch (error: any) {
       console.error(error)
-      res.status(400).send(error.message)
+      res.status(500).send(error.message)
     }
   });
 }
