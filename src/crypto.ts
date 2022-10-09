@@ -5,7 +5,7 @@ import { chainIdToRpc } from './rpcInfo'
 
 export function createWeb3(chainId?: string) {
     // @ts-ignore
-    const rpcUrl = chainId ?? chainIdToRpc[chainId] ?? ''
+    const rpcUrl = chainIdToRpc[chainId] ?? ''
     const web3Provider = new Web3.providers.HttpProvider(rpcUrl)
     return new Web3(web3Provider)
 }

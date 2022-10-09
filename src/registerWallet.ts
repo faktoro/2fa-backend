@@ -3,8 +3,7 @@ import { postRequest } from "./cors";
 import z from 'zod'
 import { readFromFirebase, setInFirebase } from './firebase';
 import { createWeb3 } from "./crypto";
-// import { createWeb3, getAddressFromSignedMessage } from './crypto';
-// import twoFactorAuthAbi from '../abis/TwoFactorAuthWallet.json'
+import twoFactorWalletAbi from './abis/TwoFactorAuthWallet.json'
 
 const requestSchema = z.object({
     method: z.custom((arg) => arg === 'POST', 'only POST requests are allowed'),
@@ -27,7 +26,7 @@ export const registerWallet = postRequest(async (req: Request, res: Response) =>
 
     const web3 = createWeb3(chainId)
     // @ts-ignore
-    const twoFactorAuthWalletContract = new web3.eth.Contract(twoFactorAuthAbi.abi, walletAddress)
+    const twoFactorAuthWalletContract = new web3.eth.Contract(twoFactorWalletAbi.abi, walletAddress)
     const owner = await twoFactorAuthWalletContract.methods.owner().call()
 
     if (address != owner) {
