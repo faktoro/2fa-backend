@@ -6,5 +6,7 @@ export const chainIdToRpc = {
     '42161': 'https://rpc.ankr.com/arbitrum',
     '137': 'https://polygon-rpc.com',
     '43114': 'https://api.avax.network/ext/bc/C/rpc',
-    '5': 'https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
+    '5': 'https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+    '10': 'https://www.ankr.com/rpc/optimism',
+    '100': 'https://rpc.gnosischain.com'
 }
