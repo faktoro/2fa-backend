@@ -1,2 +1,5 @@
 export { signTransaction } from './signTransaction'
 export { registerUser } from './registerUser'
+export { checkRegistration } from './checkRegistration'
+export { verifyRegistration } from './verifyRegistration'
+export { registerWallet } from './registerWallet'
